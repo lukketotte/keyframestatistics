@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ContactButton from './ContactButton';
 
 import backgroundLg from '../media/splash-lg.png';
 import backgroundSm from '../media/splash-sm.png';
@@ -27,10 +28,42 @@ const HeaderDiv = styled.header<HeaderDivProps>`
   align-items: center;
 `;
 
+const LinkDiv = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 150px;
+  top: 0;
+  background-image: linear-gradient(
+    to bottom,
+    #1f1f1f 7%,
+    rgba(31, 31, 31, 0.64) 54%,
+    rgba(31, 31, 31, 0.34) 79%,
+    rgba(31, 31, 31, 0)
+  );
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const UlDiv = styled.div`
+  margin-left: auto;
+  margin-right: 2em;
+`;
+
+const HeaderLink = styled.a`
+  color: lightgray;
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 1em;
+  &:hover {
+    color: white;
+  }
+`;
+
 const HeaderImg = styled.img`
-  max-width: 16em;
-  min-width: 12em;
-  margin-top: 3em;
+  max-width: 18em;
+  min-width: 16em;
+  margin-left: 2em;
 `;
 
 type H1props = {
@@ -83,7 +116,14 @@ interface HeaderProps {
 const Header = ({ width }: HeaderProps) => {
   return (
     <HeaderDiv image={setSize(width)}>
-      <HeaderImg src={logoWhite} />
+      <LinkDiv>
+        <HeaderImg src={logoWhite} />
+        <UlDiv>
+          <HeaderLink href='#'>Work</HeaderLink>
+          <HeaderLink href='#'>About</HeaderLink>
+          <ContactButton>Contact us</ContactButton>
+        </UlDiv>
+      </LinkDiv>
       <SubHeader width={width}>
         Augmenting the exploration and utilization of data
       </SubHeader>

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
+import { UIContext } from './context/Context';
 import Header from './components/Header';
 import Body from './components/Body';
 import Footer from './components/Footer';
@@ -22,8 +23,10 @@ const useViewport = () => {
 
 function App() {
   const { width } = useViewport();
+  const { state, dispatch } = useContext(UIContext);
   return (
     <MainDiv>
+      {console.log(state)}
       <Header width={width} />
       <Body width={width} />
       <Footer />

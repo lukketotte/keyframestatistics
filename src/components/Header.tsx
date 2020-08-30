@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ContactButton from './ContactButton';
+import BurgerButton from './BurgerButton';
 
 import backgroundLg from '../media/splash-lg.png';
 import backgroundSm from '../media/splash-sm.png';
@@ -118,11 +119,15 @@ const Header = ({ width }: HeaderProps) => {
     <HeaderDiv image={setSize(width)}>
       <LinkDiv>
         <HeaderImg src={logoWhite} />
-        <UlDiv>
-          <HeaderLink href='#'>Work</HeaderLink>
-          <HeaderLink href='#'>About</HeaderLink>
-          <ContactButton>Contact us</ContactButton>
-        </UlDiv>
+        {width > breakpoints.sm ? (
+          <UlDiv>
+            <HeaderLink href='#'>Work</HeaderLink>
+            <HeaderLink href='#'>About</HeaderLink>
+            <ContactButton>Contact us</ContactButton>
+          </UlDiv>
+        ) : (
+          <BurgerButton />
+        )}
       </LinkDiv>
       <SubHeader width={width}>
         Augmenting the exploration and utilization of data

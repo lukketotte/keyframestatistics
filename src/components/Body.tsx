@@ -8,22 +8,35 @@ const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2em;
+  margin: 2rem auto;
+  @media (max-width: 767px) {
+    margin: 1rem auto;
+  }
 `;
 
 const SubHeader = styled.h2`
-  max-width: 60%;
+  width: 70vw;
   font-size: 30px;
   font-weight: 50;
   text-align: center;
+  @media (max-width: 767px) {
+    font-size: 25px;
+    font-weight: 40;
+  }
 `;
 
 const BodyDiv = styled.div`
-  max-width: 50%;
+  width: 60vw;
   font-size: 19px;
   font-weight: 50;
   text-align: center;
   line-height: 35px;
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    font-weight: 40;
+    line-height: 30px;
+  }
 `;
 
 interface BodyProps {
@@ -34,9 +47,9 @@ const Body = ({ width }: BodyProps) => {
   return (
     <MainDiv>
       <SubHeader>
-        We know <br />
-        machine learning, algorithms and recommender systems, data analysis and
-        reports, econometrics, statistical and economic models and much more.
+        We know machine learning, algorithms and recommender systems, data
+        analysis and reports, econometrics, statistical and economic models and
+        much more.
       </SubHeader>
       <BodyDiv>
         <p>

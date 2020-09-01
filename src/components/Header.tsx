@@ -30,8 +30,11 @@ const HeaderDiv = styled.header<HeaderDivProps>`
 `;
 
 const LinkDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 150px;
   top: 0;
   background-image: linear-gradient(
@@ -41,9 +44,6 @@ const LinkDiv = styled.div`
     rgba(31, 31, 31, 0.34) 79%,
     rgba(31, 31, 31, 0)
   );
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 `;
 
 const UlDiv = styled.div`
@@ -62,9 +62,11 @@ const HeaderLink = styled.a`
 `;
 
 const HeaderImg = styled.img`
-  max-width: 18em;
-  min-width: 16em;
+  width: 18em;
   margin-left: 2em;
+  @media (max-width: 767px) {
+    width: 13em;
+  }
 `;
 
 type H1props = {

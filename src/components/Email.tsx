@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// TODO: if drawer is open set z-index to -1
 const StyledLink = styled.a`
   background-image: -webkit-linear-gradient(left, #ff2033, #8e00fe);
   -webkit-background-clip: text;

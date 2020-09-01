@@ -1,27 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
 
+//TODO: click outside functionality
+
 const Ul = styled.ul<{ open: boolean }>`
-  font-size: 20px;
-  list-style: none;
-  display: flex;
-  flex-flow: row nowrap;
-  li {
-    padding: 18px 10px;
+  padding: 2rem;
+  background-color: whitesmoke;
+  position: absolute;
+  transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
+  top: -1em;
+  right: 0;
+  height: 100vh;
+  transition: transform 0.3s ease-in-out;
+
+  div {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  @media (max-width: 768px) {
-    flex-flow: column nowrap;
-    background-color: whitesmoke;
-    position: fixed;
-    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
-    top: -1em;
-    right: 0;
+
+  a {
+    margin-top: 30px;
+    color: #ff2033;
+    text-decoration: none;
+  }
+
+  @media (max-width: 767px) {
+    width: 50%;
     height: 100vh;
-    width: 300px;
-    transition: transform 0.3s ease-in-out;
-    li {
-      color: #ff2033;
-    }
+    font-size: 5vw;
   }
 `;
 
@@ -32,11 +40,11 @@ interface SliderI {
 const SliderMenu = ({ open }: SliderI) => {
   return (
     <Ul open={open}>
-      <li>Home</li>
-      <li>About Us</li>
-      <li>Contact Us</li>
-      <li>Sign In</li>
-      <li>Sign Up</li>
+      <div>
+        <a href='/'>Work</a>
+        <a href='/'>About</a>
+        <a href='/'>Contact</a>
+      </div>
     </Ul>
   );
 };

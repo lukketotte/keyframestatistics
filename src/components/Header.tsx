@@ -27,6 +27,7 @@ const HeaderDiv = styled.header<HeaderDivProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 100;
 `;
 
 const LinkDiv = styled.div`
@@ -35,7 +36,7 @@ const LinkDiv = styled.div`
   align-items: center;
   position: fixed;
   width: 100vw;
-  height: 150px;
+  height: 100px;
   top: 0;
   background-image: linear-gradient(
     to bottom,
@@ -54,15 +55,16 @@ const UlDiv = styled.div`
 const HeaderLink = styled.a`
   color: lightgray;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   margin-right: 1em;
+  z-index: 10;
   &:hover {
     color: white;
   }
 `;
 
 const HeaderImg = styled.img`
-  width: 18em;
+  width: 16em;
   margin-left: 2em;
   @media (max-width: 767px) {
     width: 13em;

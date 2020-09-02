@@ -6,7 +6,7 @@ const Button = styled.button`
   padding: 0.25em 1em;
   border: 2px solid #ff2033;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 18px;
   background-color: transparent;
   transition: 0.2s;
   &:hover {

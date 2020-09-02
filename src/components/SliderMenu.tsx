@@ -29,7 +29,8 @@ const Ul = styled.ul<{ open: boolean }>`
   @media (max-width: 767px) {
     width: 50%;
     height: 100vh;
-    font-size: 5vw;
+    font-size: 1.5em;
+    z-index: 50;
   }
 `;
 

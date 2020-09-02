@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext, Fragment } from 'react';
 import styled from 'styled-components';
 import { UIContext } from './context/Context';
-import Header from './components/Header';
 import Body from './components/Body';
 import Footer from './components/Footer';
 
@@ -34,7 +33,6 @@ function App() {
     <Fragment>
       {state.width && (
         <MainDiv>
-          <Header width={state.width} />
           <Body width={state.width} />
           <Footer />
         </MainDiv>

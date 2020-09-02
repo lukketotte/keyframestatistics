@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// TODO: if drawer is open set z-index to -1
+// TODO: if drawer is open set z-index to -1. It will always appear ahead of drawer menu
+// https://stackoverflow.com/questions/44989643/make-absolute-div-that-appears-above-relative-anchor-tag-img-inside-both-click
 const StyledLink = styled.a`
   background-image: -webkit-linear-gradient(left, #ff2033, #8e00fe);
   -webkit-background-clip: text;
@@ -10,6 +11,7 @@ const StyledLink = styled.a`
   -webkit-text-fill-color: transparent;
   position: relative;
   padding-bottom: 2px;
+  z-index: 10;
   &&:after {
     content: '';
     display: block;

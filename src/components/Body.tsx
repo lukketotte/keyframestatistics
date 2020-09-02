@@ -3,14 +3,17 @@ import styled from 'styled-components';
 import Email from './Email';
 import LogoGrid from './LogoGrid';
 import members from '../constants/team/members.json';
+import Header from './Header';
 
 const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem auto;
+  margin: 0em auto;
+  position: relative;
+
   @media (max-width: 767px) {
-    margin: 1rem auto;
+    margin: 0rem auto;
   }
 `;
 
@@ -36,6 +39,7 @@ const BodyDiv = styled.div`
     font-size: 16px;
     font-weight: 40;
     line-height: 30px;
+    z-index: 0;
   }
 `;
 
@@ -46,10 +50,13 @@ interface BodyProps {
 const Body = ({ width }: BodyProps) => {
   return (
     <MainDiv>
+      <Header width={width} />
       <SubHeader>
-        We know machine learning, algorithms and recommender systems, data
-        analysis and reports, econometrics, statistical and economic models and
-        much more.
+        <p>
+          We know machine learning, algorithms and recommender systems, data
+          analysis and reports, econometrics, statistical and economic models
+          and much more.
+        </p>
       </SubHeader>
       <BodyDiv>
         <p>

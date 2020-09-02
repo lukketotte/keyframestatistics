@@ -6,7 +6,7 @@ const FooterDiv = styled.div`
   bottom: 0;
   width: 100%;
   height: 60px;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 50;
   background-color: #f0f0f0;
   color: #969696;
@@ -20,7 +20,9 @@ const FooterDiv = styled.div`
 const Footer = () => {
   return (
     <FooterDiv>
-      <div>© 2018 Key Frame Statistics AB</div>
+      <div>
+        © 2018 Key Frame Statistics AB  | Uppsala | info@keyframestatistics.se
+      </div>
     </FooterDiv>
   );
 };

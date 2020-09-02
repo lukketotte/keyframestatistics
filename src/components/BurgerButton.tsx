@@ -13,7 +13,7 @@ const Button = styled.button<{ open: boolean }>`
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 10;
+  z-index: 150;
   padding: 0;
 
   &:focus {

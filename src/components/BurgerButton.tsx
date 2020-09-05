@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import OutsideClickHandler from 'react-outside-click-handler';
 import SliderMenu from './SliderMenu';
+import { UIContext } from '../context/Context';
 
 const Button = styled.button<{ open: boolean }>`
   position: absolute;
@@ -45,15 +47,29 @@ const Button = styled.button<{ open: boolean }>`
 `;
 
 const BurgerButton = () => {
-  const [open, setOpen] = useState(false);
+  const { state, dispatch } = useContext(UIContext);
+
+  const DrawerButton = (open: boolean) => {
+    dispatch({
+      type: 'SET_OPEN',
+      payload: open,
+    });
+  };
+
   return (
     <>
-      <Button open={open} onClick={() => setOpen(!open)}>
-        <div />
-        <div />
-        <div />
-      </Button>
-      <SliderMenu open={open} />
+      <OutsideClickHandler
+        onOutsideClick={() => {
+          dispatch({ type: 'SET_OPEN', payload: false });
+        }}
+      >
+        <Button open={state.open} onClick={() => DrawerButton(!state.open)}>
+          <div />
+          <div />
+          <div />
+        </Button>
+        <SliderMenu open={state.open} />
+      </OutsideClickHandler>
     </>
   );
 };

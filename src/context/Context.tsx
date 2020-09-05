@@ -3,10 +3,12 @@ import { UIReducer } from './Reducer';
 
 export type UIinterface = {
   width: number | any;
+  open: boolean | any;
 };
 
 const initialState: UIinterface = {
   width: null,
+  open: false,
 };
 
 export const UIContext = createContext<UIinterface | any>(initialState);

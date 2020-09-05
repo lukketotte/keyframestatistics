@@ -4,6 +4,10 @@ import { UIContext } from './context/Context';
 import Body from './components/Body';
 import Footer from './components/Footer';
 
+type MainDivP = {
+  scrollBarWidth: number;
+};
+
 const MainDiv = styled.div`
   width: 100%;
   margin: 0 auto;
@@ -19,7 +23,9 @@ function App() {
       return () => window.removeEventListener('resize', handleWindowResize);
     }, []);
   };
+
   const { state, dispatch } = useContext(UIContext);
+
   useEffect(() => {
     return dispatch({
       type: 'SET_WIDTH',

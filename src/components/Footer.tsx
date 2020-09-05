@@ -17,12 +17,17 @@ const FooterDiv = styled.div`
   justify-content: center;
 `;
 
+const TextDiv = styled.div`
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
+`;
+
 const Footer = () => {
   return (
     <FooterDiv>
-      <div>
+      <TextDiv>
         © 2018 Key Frame Statistics AB  | Uppsala | info@keyframestatistics.se
-      </div>
+      </TextDiv>
     </FooterDiv>
   );
 };

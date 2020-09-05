@@ -11,7 +11,7 @@ import logoWhite from '../media/logo-white.svg';
 
 const breakpoints = {
   sm: 767,
-  md: 1024,
+  md: 1280,
   lg: 1440,
 };
 
@@ -22,15 +22,18 @@ type HeaderDivProps = {
 const HeaderDiv = styled.header<HeaderDivProps>`
   height: 600px;
   background-image: ${(props) => `url(${props.image})`};
-  width: 100%;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 100;
+  margin-left: 0px;
+  position: relative;
+  width: 100%;
+  height: 60vh;
 `;
 
 const LinkDiv = styled.div`
+  margin-left: calc(100vw - 100%);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -76,6 +79,8 @@ type H1props = {
 };
 
 const SubHeader = styled.h1<H1props>`
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
   max-width: 70%;
   color: white;
   margin-top: ${(props) =>

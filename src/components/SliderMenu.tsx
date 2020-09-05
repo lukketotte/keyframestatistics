@@ -1,7 +1,8 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 //TODO: click outside functionality
+// https://usehooks.com/useOnClickOutside/
 
 const Ul = styled.ul<{ open: boolean }>`
   padding: 2rem;

@@ -9,7 +9,6 @@ import { UIContext } from '../context/Context';
 const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
 `;
 

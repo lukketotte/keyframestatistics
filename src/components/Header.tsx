@@ -11,25 +11,47 @@ import logoWhite from '../media/logo-white.svg';
 
 const breakpoints = {
   sm: 767,
-  md: 1280,
+  md: 1024,
   lg: 1440,
 };
 
 type HeaderDivProps = {
-  image: string;
+  xl: string;
+  lg: string;
+  md: string;
+  sm: string;
 };
 
+/* Image sizes:
+- Splash-lg:  1280  ×  640
+- Splash-md: 1280  ×  1280
+- Splash-sm: 720  ×  960
+- Splash-xl: 1920  ×  720
+*/
+
 const HeaderDiv = styled.header<HeaderDivProps>`
-  height: 600px;
-  background-image: ${(props) => `url(${props.image})`};
+  @media (max-width: 767px) {
+    background-image: ${(props) => `url(${props.sm})`};
+  }
+
+  background-image: ${(props) => `url(${props.lg})`};
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 100;
-  margin-left: 0px;
-  position: relative;
-  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 60vh;
+
+  @media (min-width: 1024px) {
+    background-image: ${(props) => `url(${props.lg})`};
+  }
+
+  @media (min-width: 1440px) {
+    background-image: ${(props) => `url(${props.xl})`};
+  }
 `;
 
 const LinkDiv = styled.div`
@@ -125,7 +147,12 @@ interface HeaderProps {
 
 const Header = ({ width }: HeaderProps) => {
   return (
-    <HeaderDiv image={setSize(width)}>
+    <HeaderDiv
+      xl={backgroundXl}
+      md={backgroundMd}
+      sm={backgroundSm}
+      lg={backgroundLg}
+    >
       <LinkDiv>
         <HeaderImg src={logoWhite} />
         {width > breakpoints.sm ? (

@@ -4,6 +4,10 @@ import styled from 'styled-components';
 //TODO: click outside functionality
 // https://usehooks.com/useOnClickOutside/
 
+const WrapperDiv = styled.div`
+  z-index: 100;
+`;
+
 const Ul = styled.ul<{ open: boolean }>`
   padding: 2rem;
   background-color: whitesmoke;
@@ -31,7 +35,6 @@ const Ul = styled.ul<{ open: boolean }>`
     width: 50%;
     height: 100vh;
     font-size: 1.5em;
-    z-index: 50;
   }
 `;
 
@@ -41,13 +44,15 @@ interface SliderI {
 
 const SliderMenu = ({ open }: SliderI) => {
   return (
-    <Ul open={open}>
-      <div>
-        <a href='/'>Work</a>
-        <a href='/'>About</a>
-        <a href='/'>Contact</a>
-      </div>
-    </Ul>
+    <WrapperDiv>
+      <Ul open={open}>
+        <div>
+          <a href='/'>Work</a>
+          <a href='/'>About</a>
+          <a href='/'>Contact</a>
+        </div>
+      </Ul>
+    </WrapperDiv>
   );
 };
 

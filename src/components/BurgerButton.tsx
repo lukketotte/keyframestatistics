@@ -15,7 +15,7 @@ const Button = styled.button<{ open: boolean }>`
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 150;
+  z-index: 200;
   padding: 0;
 
   &:focus {

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ContactButton from './ContactButton';
 import BurgerButton from './BurgerButton';
+import SliderCover from './SliderCover';
 
 import backgroundLg from '../media/splash-lg.png';
 import backgroundSm from '../media/splash-sm.png';
@@ -38,7 +39,7 @@ const HeaderDiv = styled.header<HeaderDivProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 100;
+  z-index: 60;
   padding: 0;
   margin: 0;
   background-repeat: no-repeat;
@@ -129,46 +130,37 @@ const SubHeader = styled.h1<H1props>`
     }};
 `;
 
-const setSize = (size: number) => {
-  if (size < breakpoints.sm) {
-    return backgroundSm;
-  } else if (size < breakpoints.md) {
-    return backgroundMd;
-  } else if (size < breakpoints.lg) {
-    return backgroundLg;
-  } else {
-    return backgroundXl;
-  }
-};
-
 interface HeaderProps {
   width: number;
 }
 
 const Header = ({ width }: HeaderProps) => {
   return (
-    <HeaderDiv
-      xl={backgroundXl}
-      md={backgroundMd}
-      sm={backgroundSm}
-      lg={backgroundLg}
-    >
-      <LinkDiv>
-        <HeaderImg src={logoWhite} />
-        {width > breakpoints.sm ? (
-          <UlDiv>
-            <HeaderLink href='#'>Work</HeaderLink>
-            <HeaderLink href='#'>About</HeaderLink>
-            <ContactButton>Contact us</ContactButton>
-          </UlDiv>
-        ) : (
-          <BurgerButton />
-        )}
-      </LinkDiv>
-      <SubHeader width={width}>
-        Augmenting the exploration and utilization of data
-      </SubHeader>
-    </HeaderDiv>
+    <>
+      <HeaderDiv
+        xl={backgroundXl}
+        md={backgroundMd}
+        sm={backgroundSm}
+        lg={backgroundLg}
+      >
+        <SliderCover z={0} />
+        <LinkDiv>
+          <HeaderImg src={logoWhite} />
+          {width > breakpoints.sm ? (
+            <UlDiv>
+              <HeaderLink href='#'>Work</HeaderLink>
+              <HeaderLink href='#'>About</HeaderLink>
+              <ContactButton>Contact us</ContactButton>
+            </UlDiv>
+          ) : (
+            <BurgerButton />
+          )}
+        </LinkDiv>
+        <SubHeader width={width}>
+          Augmenting the exploration and utilization of data
+        </SubHeader>
+      </HeaderDiv>
+    </>
   );
 };
 

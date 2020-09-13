@@ -9,7 +9,7 @@ import { UIContext } from '../context/Context';
 const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
+  margin: 0;
 `;
 
 const ScrollDiv = styled.div`

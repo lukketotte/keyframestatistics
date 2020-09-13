@@ -40,11 +40,10 @@ const HeaderDiv = styled.header<HeaderDivProps>`
   flex-direction: column;
   align-items: center;
   z-index: 60;
-  padding: 0;
-  margin: 0;
   background-repeat: no-repeat;
   background-size: cover;
   height: 60vh;
+  width: 100vw;
 
   @media (min-width: 1024px) {
     background-image: ${(props) => `url(${props.lg})`};

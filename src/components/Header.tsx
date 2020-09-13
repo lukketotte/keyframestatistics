@@ -61,6 +61,7 @@ const LinkDiv = styled.div`
   flex-direction: row;
   align-items: center;
   position: fixed;
+  justify-content: space-between;
   width: 100vw;
   height: 100px;
   top: 0;
@@ -92,6 +93,7 @@ const HeaderLink = styled.a`
 const HeaderImg = styled.img`
   width: 16em;
   margin-left: 2em;
+  z-index: -1;
   @media (max-width: 767px) {
     width: 13em;
   }

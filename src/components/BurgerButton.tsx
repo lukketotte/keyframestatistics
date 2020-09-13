@@ -5,8 +5,8 @@ import SliderMenu from './SliderMenu';
 import { UIContext } from '../context/Context';
 
 const Button = styled.button<{ open: boolean }>`
-  position: absolute;
-  right: 2rem;
+  position: relative;
+  right: 0px;
   width: 2rem;
   height: 2rem;
   display: flex;
@@ -17,6 +17,7 @@ const Button = styled.button<{ open: boolean }>`
   cursor: pointer;
   z-index: 200;
   padding: 0;
+  margin-right: 20px;
 
   &:focus {
     outline: none;
@@ -26,7 +27,7 @@ const Button = styled.button<{ open: boolean }>`
     width: 2rem;
     height: 0.25rem;
     background: ${({ open }) => (open ? 'darkgray' : 'white')};
-    border-radius: 10px;
+    border-radius: 5px;
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;

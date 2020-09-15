@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import ContactButton from './ContactButton';
-import BurgerButton from './BurgerButton';
 import SliderCover from './SliderCover';
+import SliderMenu from './SliderMenu';
 
 import backgroundLg from '../media/splash-lg.png';
 import backgroundSm from '../media/splash-sm.png';
@@ -154,7 +154,9 @@ const Header = ({ width }: HeaderProps) => {
               <ContactButton>Contact us</ContactButton>
             </UlDiv>
           ) : (
-            <BurgerButton />
+            <div>
+              <SliderMenu open={true} />
+            </div>
           )}
         </LinkDiv>
         <SubHeader width={width}>

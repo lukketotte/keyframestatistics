@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { FiInstagram } from 'react-icons/fi';
+import OutsideClickHandler from 'react-outside-click-handler';
+import { UIContext } from '../context/Context';
+import BurgerButton from './BurgerButton';
 
 // TODO: move slider menu outside of the Linkdiv. It is pushed beneath the elements
 
-const Ul = styled.ul<{ open: boolean }>`
+const Ul = styled.nav<{ open: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,11 +17,12 @@ const Ul = styled.ul<{ open: boolean }>`
   position: absolute;
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
   right: 0;
+  top: 0;
   transition: transform 0.3s ease-in-out;
   width: 50%;
-  height: 100vh;
+  height: 92vh;
   font-size: 1.5em;
-  margin-top: 0;
+  z-index: 100;
 
   a {
     margin-top: 30px;
@@ -49,18 +53,27 @@ interface SliderI {
 }
 
 const SliderMenu = ({ open }: SliderI) => {
+  const { state, dispatch } = useContext(UIContext);
+
+  const clicked = () => {
+    dispatch({ type: 'SET_OPEN', payload: false });
+  };
+
   return (
-    <Ul open={open}>
-      <MenuDiv>
-        <a href='/'>Work</a>
-        <a href='/'>About</a>
-        <a href='/'>Contact</a>
-      </MenuDiv>
-      <BottomDiv>
-        Testar lite ifall det funkar
-        <FiInstagram />
-      </BottomDiv>
-    </Ul>
+    <OutsideClickHandler onOutsideClick={() => clicked()}>
+      <BurgerButton />
+      <Ul open={state.open}>
+        <MenuDiv>
+          <a href='/'>Work</a>
+          <a href='/'>About</a>
+          <a href='/'>Contact</a>
+        </MenuDiv>
+        <BottomDiv>
+          Testar lite ifall det funkar
+          <FiInstagram />
+        </BottomDiv>
+      </Ul>
+    </OutsideClickHandler>
   );
 };
 

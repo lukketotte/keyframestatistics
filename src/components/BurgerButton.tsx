@@ -1,7 +1,5 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import OutsideClickHandler from 'react-outside-click-handler';
-import SliderMenu from './SliderMenu';
 import { UIContext } from '../context/Context';
 
 const Button = styled.button<{ open: boolean }>`
@@ -58,20 +56,11 @@ const BurgerButton = () => {
   };
 
   return (
-    <>
-      <OutsideClickHandler
-        onOutsideClick={() => {
-          dispatch({ type: 'SET_OPEN', payload: false });
-        }}
-      >
-        <Button open={state.open} onClick={() => DrawerButton(!state.open)}>
-          <div />
-          <div />
-          <div />
-        </Button>
-        <SliderMenu open={state.open} />
-      </OutsideClickHandler>
-    </>
+    <Button open={state.open} onClick={() => DrawerButton(!state.open)}>
+      <div />
+      <div />
+      <div />
+    </Button>
   );
 };
 

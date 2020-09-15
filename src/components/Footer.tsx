@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterDiv = styled.div`
-  left: 0;
   bottom: 0;
   width: 100%;
   height: 60px;
@@ -15,10 +14,10 @@ const FooterDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  left: calc(100vw - 100%);
 `;
 
 const TextDiv = styled.div`
-  margin-left: calc(100vw - 100%);
   margin-right: 0;
 `;
 

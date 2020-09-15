@@ -10,6 +10,7 @@ const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0;
+  z-index: 10;
 `;
 
 const ScrollDiv = styled.div`

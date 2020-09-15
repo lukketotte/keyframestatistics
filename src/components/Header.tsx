@@ -23,13 +23,6 @@ type HeaderDivProps = {
   sm: string;
 };
 
-/* Image sizes:
-- Splash-lg:  1280  ×  640
-- Splash-md: 1280  ×  1280
-- Splash-sm: 720  ×  960
-- Splash-xl: 1920  ×  720
-*/
-
 const HeaderDiv = styled.header<HeaderDivProps>`
   @media (max-width: 767px) {
     background-image: ${(props) => `url(${props.sm})`};
@@ -55,7 +48,6 @@ const HeaderDiv = styled.header<HeaderDivProps>`
 `;
 
 const LinkDiv = styled.div`
-  margin-left: calc(100vw - 100%);
   display: flex;
   flex-direction: row;
   align-items: center;

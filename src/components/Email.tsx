@@ -11,7 +11,6 @@ const StyledLink = styled.a`
   -webkit-text-fill-color: transparent;
   position: relative;
   padding-bottom: 2px;
-  z-index: 10;
   &&:after {
     content: '';
     display: block;
